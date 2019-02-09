@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] private int breakableBlocks;//Debuging
+    //State Vars
+    private int breakableBlocks = 0;
 
+    GameManger gameManger;
 
-    public void CountBreakableBlock()
+    private void Start()
+    {
+        gameManger = FindObjectOfType<GameManger>();
+    }
+
+    public void CountBlock()
     {
         breakableBlocks++;
     }
@@ -15,15 +22,13 @@ public class LevelManager : MonoBehaviour
     public void CountBlocksDestroyed()
     {
         breakableBlocks--;
+        gameManger.AddToScore();
         if (breakableBlocks == 0)
         {
             SceneLoader sceneLoader = FindObjectOfType<SceneLoader>();
             sceneLoader.LoadNextScene();
         }
     }
-    private void Awake()
-    {
-        breakableBlocks = 0;
-    }
+
 
 }

@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 3638778360496744283, guid: 0089407f8cdc01e4f8737ddbca5bf02a,
         type: 3}
       propertyPath: m_Name
-      value: Diamond
+      value: Diamond Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3638778360496744281, guid: 0089407f8cdc01e4f8737ddbca5bf02a,
         type: 3}
